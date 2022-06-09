@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h4{
+            text-align: center;
+        }
+        #input{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #film{
+            width: 320px;
+            height: 180px;
+            display: none;
+            
+
+        }
+        #popUp{
+            margin: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #meldingEl {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #lengdeEl{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+        }
+        .animasjon{
+            animation: animasjon 2s ;
+        }
+        @keyframes animasjon{
+            0% { color: rgb(88, 22, 22); font-size: 15px; transform:  rotate(0deg);}
+            25% { color: blue; font-size: 20px; transform:  rotate(90deg);}
+            50% { color: purple; font-size: 25px; transform:  rotate(-90deg);}
+            75% { color: red; font-size: 20px; transform:  rotate(0deg);}
+            100% { color: rgb(88, 22, 22); font-size: 15px; transform:  rotate(360deg);}
+        }
+        #stilPoengEl{
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        #resultatTabell{
+            display: none;
+        }
+        #tabellPakning{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td, th{
+            border: 1px solid;
+            padding: 10px;
+            text-align: center;
+        }
+        #infoOmPoengVerdier {
+            font-size: small;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #infoP{
+            width: 50%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h4>Resultatservice</h4>
+    <div id="input">
+        <input id="kPunktInput" type="number" placeholder="K-punkt">
+        <input id="navnEl" type="text" placeholder="Hopperens navn">
+        <button id="knapp1">Legg til</button> <!--Jeg går ut ifra at jeg kan bruke den samme knappen til navn og k-punkt siden det ikke står noe mer spesifert i oppgaven en "ved knappeclick"-->
+    </div>
+
+    <div id="popUp">
+        <video id="film" src="skihoppredigert.mp4"></video>
+    </div>
+
+    <div id="lengdeEl"></div>
+    <div id="meldingEl"></div>
+
+    <div id="infoOmPoengVerdier">
+        <p id="infoP">NB! Hver dommers poeng kan være mellom 0 og 20. Poeng kan oppgis med desimaltall 5 f.eks 8.5 eller som heltall. Du kan bruke piltastene på inntastingselementet for å velge gyldige verdier, eller skrive dem inn selv på eget ansvar.</p>
+    </div>
+
+    <div id="stilPoengEl">
+        <p>Dommeres poeng: </p> 
+        <input id="dommer1" type="number" min="0" max="20" step="0.5" value="18">
+        <input id="dommer2" type="number" min="0" max="20" step="0.5" value="18">
+        <input id="dommer3" type="number" min="0" max="20" step="0.5" value="18">
+        <input id="dommer4" type="number" min="0" max="20" step="0.5" value="18">
+        <input id="dommer5" type="number" min="0" max="20" step="0.5" value="18">
+        <button id="dommerKnapp">Legg inn</button>
+    </div>
+
+    <div id="tabellPakning">
+    <table id="resultatTabell">
+        <th>Plass</th>
+        <th>Navn</th>
+        <th>Lengdepoeng</th>
+        <th>Stilpoeng</th>
+        <th>Poengsum</th>
+    </table>
+    </div>
+    <script src="resultatservice.js"></script>
+</body>
+</html>
